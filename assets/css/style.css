@@ -1,0 +1,419 @@
+/*@font-face {*/
+/*    font-family: 'Lato';*/
+/*    src: url('assets/fonts/Lato-Thin.ttf') format('truetype');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+/*css reset*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Common */
+.text-center{
+    text-align: center !important;
+}
+
+.btn-hover:hover {
+    background-color: #ccc !important;
+    color: black !important;
+}
+
+.clear{
+    clear: both; /*(clear) các phần tử "floating"*/
+}
+.text-white{
+    color: white !important;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mg-lr-unset{
+    margin-left: unset;
+    margin-right: unset;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third{
+    width: 33.33333333%;
+}
+
+.col-second{
+    width: 50%;
+}
+
+.col-one{
+    width: 100%;
+}
+
+.pd-lr-unset {
+    padding-left: unset;
+    padding-right: unset;
+}
+
+/* Main */
+#main{
+
+}
+
+#header{
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+#nav > li{
+    display: inline-block;
+    position: relative;
+}
+
+#nav li a{
+    text-decoration: none;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav > li > a{ /*chi con truc tiep*/
+    color: white;
+    text-transform: uppercase;
+    line-height: 46px;
+    font-size: 15px;
+}
+
+#nav .subnav li:hover a, /* dau , cho thay hai cai khac nhau*/
+#nav > li:hover > a{
+    color: black;
+    background-color: #ccc;
+}
+
+#nav .subnav{
+    display: none;
+    background-color: white;
+    min-width: 160px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#nav .subnav li a {
+    width: 100%;
+    font-size: 15px;
+    color: black;
+    padding: 11px 16px;
+}
+
+.nav-arrow-down{
+    font-size: 14px;
+}
+
+.lift-up-a-bit{
+    position: relative;
+    top: -1px;
+}
+
+#header .search-btn{
+    float: right;
+    padding: 0 23px;
+    cursor: pointer;
+}
+
+#header .search-btn:hover{
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+#header .search-icon{
+    color: white;
+    font-size: 16px;
+    line-height: 46px;
+}
+
+#slider{
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%; /* 50% cua chieu width(inline size) cua chinh no */
+    background: url("/assets/img/chicago.jpg") top center /     cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    /*dịch phần tử theo trục X
+    (chiều ngang) sang trái 50% so với chính kích thước của nó.*/
+    color: white;
+    text-align: center;
+    /*width: 100%;*/
+    /*right: 0;*/
+    /*left: 0;*/
+}
+
+#slider .text-heading{
+    font-weight: 400;
+    font-size: 24px;
+}
+
+#slider .text-discription{
+    font-size: 15px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+
+#content{
+}
+
+#content .content-section{
+    padding: 64px 16px 112px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 4px;
+    margin: 10px 0;
+}
+
+#content .section-sub-heading{
+    font-size: 15px;
+    text-align: center;
+    margin: 15px 0;
+    font-style: italic;
+    /*color: black;*/
+    opacity: 0.6;
+}
+
+#content .about-text{
+    text-align: justify;
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+#content .member-list{
+    padding: 32px 0 0;
+    margin:unset;
+    /*overflow: hidden; !*mot ki thuat clearfix*!*/
+}
+
+#content .member-item{
+    padding: unset;
+}
+
+#content .member-name{
+    font-size: 14.5px;
+}
+
+#content .member-img{
+    margin-top: 15px;
+    width: 60%;
+    aspect-ratio: 1/1; /*ti le chieu rong vs chieu cao*/
+    border-radius: 4px;
+}
+
+/*Tour section*/
+.tour-section {
+    background-color: black;
+}
+
+.tickets-list {
+    background-color: white;
+    margin-top: 40px;
+    list-style: none;
+}
+
+.tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #dddddd;
+    color: #757575
+}
+
+.tickets-list .sold-out {
+    background-color: #f44336;
+    color: white;
+    padding: 3px 8px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity {
+    display: inline-block;
+    float: right;
+    width: 24px;
+    margin-right: 16px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 1.5px;
+    margin-top: -4px;
+    line-height: 24px;
+}
+
+/*Places*/
+.places-list {
+    margin-top: 32px;
+}
+
+.places-list .place-img {
+    width: 100%;
+    display: block;
+}
+
+.places-list .place-img:hover {
+    opacity: 0.7;
+}
+
+.places-list .place-body {
+    background-color: white;
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.places-list .place-heading {
+    font-size: 15px;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.places-list .place-time {
+    margin: 15px 0;
+    color: #757575;
+}
+
+.places-list .place-desc {
+    margin: 15px 0;
+}
+
+.places-list .place-buy-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+/* Contact form */
+.contact-content {
+    padding: 32px 0;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class *= "fa-"] { /* chon nhung element co class co bao gom string duoc chi dinh */
+    /*font-size: 18px;*/
+    display: inline-block;
+    width: 30px;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+}
+
+.contact-form .form-submit-btn {
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    padding: 8px 16px;
+    border: none;
+    float: right;
+    margin-bottom: 16px;
+    height: 38.5px;
+}
+
+/* Map section */
+.map-section img{
+    width: 100%;
+    filter: grayscale(50%);
+}
+
+/*footer section*/
+#footer{
+    padding: 64px 16px;
+    color: rgba(0,0,0,0.6);
+}
+
+.social-list i {
+    font-size: 24px;
+    cursor: none;
+}
+
+.social-list a {
+    color: rgba(0,0,0,0.6);
+}
+
+.social-list a:hover {
+    opacity: 0.6;
+}
+
+.social-list .copyright{
+    font-size: 15px;
+    margin: 15px 0;
+}
