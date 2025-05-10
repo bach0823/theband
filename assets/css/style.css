@@ -10,6 +10,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Lato, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -29,6 +31,7 @@ html{
 .btn-hover:hover {
     background-color: #ccc !important;
     color: black !important;
+    border: none !important;
 }
 
 .clear{
@@ -347,6 +350,8 @@ html{
     color: white;
     background-color: black;
     text-decoration: none;
+    border: none;
+    font-size: 15px;
 }
 
 /* Contact form */
@@ -402,7 +407,7 @@ html{
 
 .social-list i {
     font-size: 24px;
-    cursor: none;
+    cursor: default;
 }
 
 .social-list a {
@@ -416,4 +421,110 @@ html{
 .social-list .copyright{
     font-size: 15px;
     margin: 15px 0;
+}
+
+/*modal*/
+.modal {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal .modal-container {
+    background-color: white;
+    width: 900px;
+    height: 470px;
+    position: relative;
+    /*margin: 0 16px;*/
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease 0.4s;
+    margin-bottom: 40px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    opacity: 0.9;
+    padding: 16px;
+}
+
+.modal-close:hover {
+    opacity: 1;
+    background-color: red;
+}
+
+.modal-header {
+    height: 129px;
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-header i{
+    margin-right: 20px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-container .btn-hover{
+    cursor: pointer;
+}
+
+.modal-label {
+    display: block;
+    font-size: 15px;
+}
+
+.modal-input {
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    margin: 8px 0 24px;
+    border: 1px solid #cccccc;
+}
+
+#buy-tickets{
+    width: 100%;
+    font-size: 15px;
+    padding: 16px;
+    text-transform: uppercase;
+    background-color: #009688;
+    border: none;
+    color: white;
+}
+
+.modal-footer .modal-help {
+    padding: 16px;
+    text-align: right;
+}
+
+@keyframes modalFadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
